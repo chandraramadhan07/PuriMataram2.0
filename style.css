@@ -19,6 +19,19 @@ body {
     }
 }
 
+@keyframes up {
+    0% {
+    opacity: 0;
+    transform: translateY(100px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .container {
     width: 100%;
     height: auto;
@@ -42,11 +55,6 @@ nav.sticky {
     background: #ffff;
 }
 
-#contact-nav.sticky {
-    padding: 30px;
-    background: #000;
-}
-
 nav ul li {
     display: inline-block;
     list-style: none;
@@ -60,19 +68,20 @@ nav ul li a {
     font-size: 20px;
 }
 
-#contact-nav ul li a{
-    color: #000;
-}
-
 nav.sticky ul li a{
     color: #000;
     font-weight: lighter;
 }
 
-#contact-nav.sticky ul li a{
-    color: #fff;
-    font-weight: lighter;
+/*Home Content*/
+.home-nav-ul-li-a {
+    border-bottom: solid 1px #fff;
 }
+
+#home-nav.sticky .home-nav-ul-li-a {
+    border-bottom: solid 1px #000;
+}
+
 
 .home {
     display: flex;
@@ -87,7 +96,6 @@ nav.sticky ul li a{
 
 .home-content {
    width: 100%;
-   animation: fade 2s; 
 }
 
 .text-content {
@@ -100,11 +108,15 @@ nav.sticky ul li a{
     position: relative;
     left: 100px;
     color: white;
+         
 }
+
 
 .header {
     margin: 100px 0;
     height: 50%;
+    animation: up 2s;
+     
 }
 .header h1 {
     font-size: 8rem;
@@ -120,6 +132,18 @@ nav.sticky ul li a{
 .desc {
     height: 50%;
     font-size: 1.3rem;
+    animation: up 2s;
+    animation-delay: 0.8s;
+    animation-fill-mode: both;
+}
+
+/* ABOUT US CONTENT */
+.about-nav-ul-li-a {
+    border-bottom: solid 1px #fff;
+}
+
+#about-nav.sticky .about-nav-ul-li-a {
+    border-bottom: solid 1px #000;
 }
 
 
@@ -168,6 +192,14 @@ nav.sticky ul li a{
 }
 
 
+/*Maps Content*/
+.maps-nav-ul-li-a {
+    border-bottom: solid 1px #fff;
+}
+
+#maps-nav.sticky .maps-nav-ul-li-a {
+    border-bottom: solid 1px #000;
+}
 
 .maps-content {
     display: flex;
@@ -183,7 +215,7 @@ nav.sticky ul li a{
     width: 30%;
     justify-content: center;
     color: white;
-    animation: fade 2s;
+    animation: up 2s;
 }
 
 .maps-txt h1{
@@ -197,6 +229,8 @@ nav.sticky ul li a{
     width: 70%;
     position: relative;
     animation: fade 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
 }
 
 .maps img{
@@ -604,9 +638,30 @@ nav.sticky ul li a{
 
 
 /* Contact */ /* Contact */ /* Contact */ /* Contact */
-.contact-nav ul li a{
+#contact-nav ul li a{
     color: black;
 }
+
+#contact-nav.sticky {
+    padding: 30px;
+    background: #01271e;
+}
+
+#contact-nav.sticky ul li a{
+    color: #fff;
+    font-weight: lighter;
+}
+
+.contact-nav-ul-li-a {
+    border-bottom: solid 1px #000;
+}
+
+#contact-nav.sticky .contact-nav-ul-li-a{
+    color: #fff;
+    font-weight: lighter;
+    border-bottom: solid 1px #fff;
+}
+
 .contact-container {
     background-color: rgb(238, 253, 240);
     width: 100%;
@@ -634,23 +689,32 @@ nav.sticky ul li a{
     margin-bottom: 35px;
     line-height: 1.4;
     font-size: 2rem;
+    animation: up 2s;
 }
 
-.contact-content .lokasi {
-    margin-top: 100px;
-    margin-bottom: 30px;
-}
 
 .contact-content p {
     line-height: 1.9;
     font-size: large;
-    
+    animation: up 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
 }
 
 .contact-content a {
     text-decoration: none;
     color: #000;
 }
+
+
+.contact-content .lokasi {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    animation: up 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
 
 .loc-btn {
     display: flex;
@@ -661,6 +725,7 @@ nav.sticky ul li a{
     height: 50px;
     cursor: pointer;
     transition: background-color 0.5s ease, color 0.5s ease;
+    animation: fade 2s;
 }
 
 .loc-btn:hover {
@@ -673,6 +738,7 @@ nav.sticky ul li a{
     height: 80vh;
     background-color: white;
     padding: 45px;
+    animation: fade 2s;
 }
 
 .form-content {
@@ -729,4 +795,49 @@ textarea {
 .submit:hover {
     background-color: #aa7229;
     color: #fff;
+}
+
+footer{
+    background-color: #01271e;
+}
+
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.ikonmedsos{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.ikonmedsos a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.ikonmedsos a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+/* Efek ikon medsos footer */
+.ikonmedsos a:hover{
+    background-color: #aa7229;
+    transition: 0.5s;
+}
+
+.ikonmedsos a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.footerbawah {
+    color: white;
+    text-align: center;
 }
