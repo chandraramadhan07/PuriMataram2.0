@@ -9,6 +9,7 @@ body {
     font-family:'montserrat', sans-serif; 
 }
 
+
 @keyframes slider {
     0% {
         transform: translateX(0);
@@ -54,10 +55,6 @@ body {
     }
 }
 
-.container {
-    width: 100%;
-    height: auto;
-}
 
 nav {
     color: white;
@@ -95,7 +92,9 @@ nav.sticky ul li a{
     font-weight: lighter;
 }
 
-/*Home Content*/
+
+/*Home*/        /*Home*/        /*Home*/        /*Home*/        /*Home*/         
+/*NAV Home Content*/               
 .home-nav-ul-li-a {
     border-bottom: solid 1px #fff;
 }
@@ -104,7 +103,7 @@ nav.sticky ul li a{
     border-bottom: solid 1px #000;
 }
 
-
+/*Home Content*/ 
 .home {
     display: flex;
     justify-content: center;
@@ -131,9 +130,7 @@ nav.sticky ul li a{
     align-items: flex-start;
     width: 45%;
     height: 100vh;
-    position: relative;
     color: white;
-         
 }
 
 .header {
@@ -143,22 +140,14 @@ nav.sticky ul li a{
      
 }
 .header h1 {
-    font-size: 8rem;
+    font-size: 8em;
     border-bottom: 3px solid white;
 
 }
 .header p {
     margin-top: 10px;
     text-align: center;
-    font-size: 2rem
-}
-
-.desc {
-    height: 50%;
-    font-size: 1.3rem;
-    animation: up 2s;
-    animation-delay: 0.8s;
-    animation-fill-mode: both;
+    font-size: 2em
 }
 
 
@@ -169,17 +158,29 @@ nav.sticky ul li a{
     width: 45%;
     height: 100vh;
     margin-left: 10%;
+    
 }
 
 .outer-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 600px;
-    animation: fade 1s;
-    
+    width: 660px;
+    height: 400px;
+    background-color: #0000002c;
 
+    backdrop-filter: blur(5px);
+    
+    animation: fade 1s;
+    border-radius: 10px;
+    padding: 0 0 30px 0;
+}
+
+.outer-content h2 {
+    padding: 20px;
+    font-size: 1.6em;
+    color:#fff;
 }
 
 .slide-content {
@@ -188,24 +189,23 @@ nav.sticky ul li a{
     width: 600px;
     height: auto;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 }
 
 .slide-img {
     width: 100%;
     height: auto;
+
     transition-property: transform;
     animation-name: slider; 
     animation-duration: 15s;
     animation-delay: 3s; 
     animation-timing-function:cubic-bezier(0.1, 1, 0.1, 1);
     animation-iteration-count: infinite;
-    box-shadow: #000;
 }
 
 .slide-img img {
     width: 600px;
+    border-radius: 5px;
 }
 
 
@@ -223,6 +223,7 @@ nav.sticky ul li a{
     align-items: center;
     width: 90%;
     height: auto;
+    margin: 50px 0;
 }
 
 .sub-header {
@@ -230,19 +231,19 @@ nav.sticky ul li a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
     width: 100%;
     height: auto;
+    margin-bottom: 50px;
 }
 
-.sub-header .header-light {
+.sub-header .header-content-light {
     margin-bottom: 10px;
     font-weight: lighter;
     font-size: 16px;
     color: #333333;
 }
 
-.sub-header .header {
+.sub-header .sub-header-content {
     margin: 0;
     font-size: 25px;
     font-weight: bolder;
@@ -255,21 +256,58 @@ nav.sticky ul li a{
     flex-wrap: wrap;
     width: 100%;
     height: auto;
+    gap: 50px;
 }
 
 .sub-content {
     display: flex;
     flex-direction: column;
-    width: 25%;
-    height: 300px;
+    width: 370px;
+    height: auto;
     border: solid 1px white;
-    background-color: #000;
     align-items: center;
-    color: wheat;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.header-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-content-img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.header-content-img img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.header-content-txt {
+    width: auto;
+    height: auto;
+    font-size: 1.5em;
+    font-weight: bolder;
 }
 
 
-/* ABOUT US CONTENT */
+
+.sub-main-content {
+    font-weight: lighter;
+}
+
+
+/* ABOUT US */    /* ABOUT US */    /* ABOUT US */    /* ABOUT US */    
+/* ABOUT US  NAVBAR*/    
 .about-nav-ul-li-a {
     border-bottom: solid 1px #fff;
 }
@@ -278,16 +316,16 @@ nav.sticky ul li a{
     border-bottom: solid 1px #000;
 }
 
-
+/* ABOUT US  CONTENT*/    
 .about {
     width: 100%;
     height: auto;
-    padding-bottom: 150px;
+    padding: 0 150px 100px;
     background: linear-gradient(to bottom,#001f18, #05503a, #199b6b);
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
+
 }
 
 .about-header {
@@ -309,7 +347,7 @@ nav.sticky ul li a{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 1500px;
+    width: 100%;
     height: auto;
     border-radius: 5px;
     background-color: #fff;
@@ -323,8 +361,14 @@ nav.sticky ul li a{
     font-size: 1.2rem;
 }
 
+iframe {
+    width: 55%;
+    height: 400px;
+}
 
-/*Maps Content*/
+
+/* Maps */      /* Maps */      /* Maps */      /* Maps */  
+/* Maps NAVBAR*/          
 .maps-nav-ul-li-a {
     border-bottom: solid 1px #fff;
 }
@@ -333,19 +377,20 @@ nav.sticky ul li a{
     border-bottom: solid 1px #000;
 }
 
+/* Maps CONTENT*/      
 .maps-content {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
+    padding: 30px;
     background: linear-gradient(to bottom,#001f18, #05503a, #199b6b);
 }
 
 .maps-txt {
     display: flex;
     width: 30%;
-    justify-content: center;
     color: white;
     animation: up 2s;
 }
@@ -361,7 +406,7 @@ nav.sticky ul li a{
     width: 70%;
     position: relative;
     animation: fade 2s;
-    animation-delay: 0.5s;
+    animation-delay: 1s;
     animation-fill-mode: backwards;
 }
 
@@ -518,28 +563,12 @@ nav.sticky ul li a{
 
 
 /* HIDDEN CONTENT -- HIDDEN CONTENT -- HIDDEN CONTENT -- HIDDEN CONTENT */
-
-.parkir-hidden {
-    display: none;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 85%;
-    background-color: white;
-    box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
-    color: black;
-    
-}
-
 .btn-close {
     background-color: transparent;
     border: 0;
     font-size: 40px;
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: 10px;
     border-radius: 50%;  
     padding: 0 12px;
@@ -568,27 +597,72 @@ nav.sticky ul li a{
 }
 
 .hidden-content {
-    display: grid;
-    width: 80%;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.hdn-img {
+    height: 25vh;
+    flex-grow: 1;
+}
 
 .hidden-content img {
+    display: block;
+    min-width: 100%;
+    max-height: 100%;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+/* HIDDEN PARKIR */
+.parkir-hidden-container {
+    display: none;
+    position: fixed;
     width: 100%;
-    height: auto;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
 }
 
-
-.parkir-hidden:target {
+.parkir-hidden {
     display: flex;
-    top: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 80%;
+    background-color: white;
+    color: black;
+    padding: 30px;
+    
 }
+
+.parkir-hidden .btn-close {
+    right: 250px;
+    top: 105px;
+}
+
+.parkir-hidden-container:target {
+    display: flex;
+}
+
 
 /* Hidden Embung Kembangan */
-.embung-hidden {
+.embung-hidden-container {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.embung-hidden {
+    display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: center;
@@ -596,27 +670,29 @@ nav.sticky ul li a{
     width: 80%;
     height: 85%;
     background-color: white;
-    box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
     color: black;
+    padding: 30px;
 }
 
-.embung-hidden:target {
+.embung-hidden-container:target {
     display: flex;
-    top: 10%;
-}
-
-.embung1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
 }
 
 
 /* HIDDEN TAMAN KELINCI */
-.kelinci-hidden {
+.kelinci-hidden-container {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.kelinci-hidden {
+    display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: center;
@@ -625,19 +701,29 @@ nav.sticky ul li a{
     height: 80%;
     background-color: white;
     box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
-.kelinci-hidden:target {
+.kelinci-hidden-container:target {
     display: flex;
-    top: 15%;
 }
 
 
 
 /* HIDDEN KANDANG MERINO */
-.merino-hidden {
+.merino-hidden-container {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.merino-hidden {
+    display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: center;
@@ -646,19 +732,28 @@ nav.sticky ul li a{
     height: 80%;
     background-color: white;
     box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
-.merino-hidden:target {
+.merino-hidden-container:target {
     display: flex;
-    top: 15%;
 }
 
 
 /* HIDDEN TAMAN BUNGA */
-.bunga-hidden {
+.bunga-hidden-container {
     display: none;
     position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.bunga-hidden {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -666,7 +761,7 @@ nav.sticky ul li a{
     height: 80%;
     background-color: white;
     box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
 .bunga-hidden .hidden-content {
@@ -689,15 +784,26 @@ nav.sticky ul li a{
     font-weight: bolder;
 }
 
-.bunga-hidden:target {
+.bunga-hidden-container:target {
     display: flex;
-    top: 15%;
+
 }
 
 
 /* HIDDEN TAMAN RUSA */
-.rusa-hidden {
+.rusa-hidden-container {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.rusa-hidden {
+    display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: center;
@@ -706,18 +812,29 @@ nav.sticky ul li a{
     height: 80%;
     background-color: white;
     box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
-.rusa-hidden:target {
+.rusa-hidden-container:target {
     display: flex;
-    top: 15%;
+
 }
 
 
 /* HIDDEN TAMAN UNGGAS */
-.unggas-hidden {
+.unggas-hidden-container {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.unggas-hidden {
+    display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: center;
@@ -726,17 +843,27 @@ nav.sticky ul li a{
     height: 80%;
     background-color: white;
     box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
-.unggas-hidden:target {
+.unggas-hidden-container:target {
     display: flex;
-    top: 15%;
 }
 
 /* HIDDEN PASAR NDELIK */
-.pasar-hidden {
+.pasar-hidden-container {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.pasar-hidden {
+    display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: center;
@@ -745,17 +872,27 @@ nav.sticky ul li a{
     height: 80%;
     background-color: white;
     box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
-.pasar-hidden:target {
+.pasar-hidden-container:target {
     display: flex;
-    top: 15%;
 }
 
 /* HIDDEN TAMAN KAKTUS */
-.kaktus-hidden {
+.kaktus-hidden-container {
     display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000088;
+    backdrop-filter: blur(5px);
+}
+
+.kaktus-hidden {
+    display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: center;
@@ -764,15 +901,16 @@ nav.sticky ul li a{
     height: 80%;
     background-color: white;
     box-shadow: 0 0 100px 30px #d1d0d0;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
-.kaktus-hidden:target {
+.kaktus-hidden-container:target {
     display: flex;
 }
 
 
 /* Contact */ /* Contact */ /* Contact */ /* Contact */
+/* CONTACT NAVBAR */      
 #contact-nav ul li a{
     color: black;
 }
@@ -797,10 +935,12 @@ nav.sticky ul li a{
     border-bottom: solid 1px #fff;
 }
 
+/* CONTACT CONTENT */ 
 .contact-container {
     background-color: rgb(238, 253, 240);
     width: 100%;
     height: 120vh;
+    padding: 0 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -810,7 +950,7 @@ nav.sticky ul li a{
     display: flex;
     justify-content: space-between;
     width: auto;
-    height: 80vh;
+    height: auto;
     margin-bottom: 100px;
 }
 
@@ -873,23 +1013,24 @@ nav.sticky ul li a{
 
 .contact-form {
     width: 45%;
-    height: 80vh;
+    height: auto;
     background-color: white;
     padding: 45px;
-    animation: fade 2s;
+    animation: fade 3s;
     box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
 
 .form-content {
     display: flex;
+    height: auto;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+    margin-bottom: 100px;
 }
 
 input {
-    height: 60px;
-    padding-left: 20px;
+    
+    padding: 25px;
     border: solid 1px rgba(0, 0, 0, 0.329);
     margin-bottom: 40px;
 }
@@ -915,7 +1056,6 @@ textarea {
     height: 200px;
     width: 100%;
     padding: 10px 20px;
-    font-family: 'montserrat', sans-serif;
 }
 
 .submit {
@@ -927,7 +1067,6 @@ textarea {
     border: solid 1px #aa7229;
     width: 120px;
     height: 50px;
-    margin-top: 100px;
     transition: background-color 0.5s ease, color 0.5s;
 }
 
@@ -936,7 +1075,7 @@ textarea {
     color: #fff;
 }
 
-/* FOOTER CONTENT */
+/* FOOTER */        /* FOOTER */        /* FOOTER */        /* FOOTER */        
 footer{
     background-color: #01271e;
 }
