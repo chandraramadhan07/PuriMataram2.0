@@ -214,7 +214,7 @@ nav.sticky ul li a{
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
 }
 
 .sub-box {
@@ -256,7 +256,7 @@ nav.sticky ul li a{
     flex-wrap: wrap;
     width: 100%;
     height: auto;
-    gap: 50px;
+    gap: 100px;
 }
 
 .sub-content {
@@ -299,6 +299,9 @@ nav.sticky ul li a{
     font-weight: bolder;
 }
 
+.header-content-txt h6 {
+    font-size: 0.85em;
+}
 
 
 .sub-main-content {
@@ -424,15 +427,101 @@ iframe {
 .pin-bunga-container,
 .pin-unggas-container {             
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: absolute;
     color: white;
-    width: 15%;
+    width: 400px;
+}
+
+.pin-parkir-popup,
+.pin-embung-popup,
+.pin-kelinci-popup,
+.pin-pasar-popup,
+.pin-merino-popup,
+.pin-kaktus-popup,
+.pin-rusa-popup,
+.pin-bunga-popup,
+.pin-unggas-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: translateY(-65%);
+    visibility: hidden;
+    opacity: 0;    
+    transition: 0.3s ease;
+    z-index: 2;
+    width: 400px;
+    height: auto;
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+}
+
+.pin-bunga-popup,
+.pin-unggas-popup {
+    transform: translateY(65%);
+}
+
+.pin-parkir-container:hover .pin-parkir-popup,
+.pin-embung-container:hover .pin-embung-popup,
+.pin-kelinci-container:hover .pin-kelinci-popup,
+.pin-pasar-container:hover .pin-pasar-popup,
+.pin-merino-container:hover .pin-merino-popup,
+.pin-kaktus-container:hover .pin-kaktus-popup,
+.pin-rusa-container:hover .pin-rusa-popup,
+.pin-bunga-container:hover .pin-bunga-popup,
+.pin-unggas-container:hover .pin-unggas-popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+.pin-parkir-box,
+.pin-embung-box,
+.pin-kelinci-box,
+.pin-pasar-box,
+.pin-merino-box,
+.pin-kaktus-box,
+.pin-rusa-box,
+.pin-bunga-box,
+.pin-unggas-box {
+    display: flex;
+    position: absolute;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parkir-popup-box,
+.embung-popup-box,
+.kelinci-popup-box,
+.pasar-popup-box,
+.merino-popup-box,
+.kaktus-popup-box,
+.rusa-popup-box,
+.bunga-popup-box,
+.unggas-popup-box {
+    width: 100%;
+    text-align: start;
+}
+
+.gallery-anchor {
+    width: 60%;
+    height: auto;
+    margin-top: 15px;
+    align-self: start;
+    color: #000;
+}
+
+.gallery-anchor a {
+    text-decoration: none;
+    color: #000;
 }
 
 .pin-parkir-container{      /* Posisi Pin Maps Parkiran*/
-    left: 26.2%;
-    top: 31.9%;
+    left: 13%;
+    top: 37%;
 }
 
 .pin-parkir-img {
@@ -445,8 +534,8 @@ iframe {
 }
 
 .pin-embung-container {         /* Posisi Pin Maps Embung Kembangan */
-    left: 42%;
-    top: 46%;
+    left: 29%;
+    top: 51%;
 }
 
 .pin-embung-img {
@@ -459,8 +548,8 @@ iframe {
 }
 
 .pin-kelinci-container {         /* Posisi Pin Taman Kelinci */
-    left: 67.36%;
-    top: 56%;
+    left: 53%;
+    top: 58%;
 }
 
 .pin-kelinci-img {
@@ -473,8 +562,8 @@ iframe {
 }
 
 .pin-merino-container {         /* Posisi Pin Kandang Merino */
-    left: 75.3%;
-    top: 65%;
+    left: 62%;
+    top: 73%;
 }
 
 .pin-merino-img {
@@ -488,8 +577,8 @@ iframe {
 }
 
 .pin-bunga-container {         /* Posisi Pin Taman Bunga */
-    left: 76.6%;
-    top: 12%;
+    left: 62.85%;
+    top: 20%;
 }
 
 .pin-bunga-img {
@@ -502,8 +591,8 @@ iframe {
 }
 
 .pin-rusa-container {         /* Posisi Pin Kandang Rusa */
-    left: 79.7%;
-    top: 28.9%;
+    left: 68%;
+    top: 38%;
 }
 
 .pin-rusa-img {
@@ -517,8 +606,8 @@ iframe {
 }
 
 .pin-unggas-container {         /* Posisi Pin Kandang Rusa */
-    left: 59%;
-    top: 13%;
+    left: 45%;
+    top: 20%;
 }
 
 .pin-unggas-img {
@@ -532,8 +621,8 @@ iframe {
 }
 
 .pin-pasar-container {         /* Posisi Pin PASAR NDELIK */
-    left: 50%;
-    top: 30%;
+    left: 36%;
+    top: 38%;
 }
 
 .pin-pasar-img {
@@ -547,8 +636,8 @@ iframe {
 }
 
 .pin-kaktus-container {         /* Posisi Pin TAMAN KAKTUS */
-    left: 70%;
-    top: 72%;
+    left: 54%;
+    top: 76%;
 }
 
 .pin-kaktus-img {
@@ -640,8 +729,8 @@ iframe {
 }
 
 .parkir-hidden .btn-close {
-    right: 250px;
-    top: 105px;
+    right: 13%;
+    top: 12%;
 }
 
 .parkir-hidden-container:target {
@@ -761,29 +850,18 @@ iframe {
     padding: 30px;
 }
 
-.bunga-hidden .hidden-content {
-    display: flex;
-    width: 75%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-}
-
-.bunga-hidden .hidden-content .renov{
-    position: absolute;
-    background-color: red;
-    color: white;
-    text-align: center;
-    transform: rotate(28deg);
-    width: 105%;
-    border-radius: 5px;
-    font-size: large;
-    font-weight: bolder;
+.bunga-hidden .hidden-box {
+    width: 90%;
 }
 
 .bunga-hidden-container:target {
     display: flex;
 
+}
+
+.bunga-hidden .btn-close {
+    right: 13.5%;
+    top: 12%;
 }
 
 
@@ -932,14 +1010,22 @@ iframe {
 .contact-container {
     background-color: rgb(238, 253, 240);
     width: 100%;
-    height: 120vh;
+    height: auto;
     padding: 0 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.contact-box {
+.contact-content-container {
+    display: flex;
+    margin-top: 150px;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.contact-content-box {
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -1030,7 +1116,6 @@ input {
 
 #name {
     width: 45%;
-
 }
 
 #phone {
@@ -1069,47 +1154,141 @@ textarea {
 }
 
 /* FOOTER */        /* FOOTER */        /* FOOTER */        /* FOOTER */        
-footer{
+footer {
     background-color: #01271e;
 }
 
-.footerContainer{
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding: 70px 30px 20px;
+    height: auto;
+    padding: 45px 0 25px 0;
 }
 
-.ikonmedsos{
+.container-isi {
+    width: 90%;
+}
+
+.box-isi {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    gap: 350px;
+}
+
+.isifooter {
+    color: #fff;
+    width: 50%;
+}
+
+.isifooter-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.isifooter ul li {
+    list-style: none;
+    font-weight: lighter;
+    line-height: 40px;
+    font-size: 1em;
+}
+
+.footernav {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footernav-title {
+    width: 100%;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footernav-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+}
+
+
+.footernav ul li {
+    list-style: none;
+    font-weight: lighter;
+    display: list-item ;
+}
+
+.footernav-content {
+
+    width: 70%;
+}
+
+.footernav ul li a {
+    color : #fff;
+    text-decoration: none;
+
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+
+.ikonmedsos {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    gap: 20px;
 }
 
-.ikonmedsos a{
-    text-decoration: none;
-    padding: 10px;
-    background-color: white;
-    margin: 10px;
+
+.styleicon {
+    background-color: #fff;
     border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.ikonmedsos a i{
-    font-size: 2em;
-    color: black;
+.ikonmedsos img {
+    color: white;
     opacity: 0.9;
 }
 
 /* Efek ikon medsos footer */
-.ikonmedsos a:hover{
+.ikonmedsos img:hover {
+    transition: 0.5s;
+    filter: invert(95%) saturate(18%) hue-rotate(343deg) brightness(104%) contrast(107%);
+} 
+
+.ikonmedsos .styleicon:hover {
     background-color: #aa7229;
     transition: 0.5s;
 }
 
-.ikonmedsos a:hover i{
-    color: white;
-    transition: 0.5s;
+
+.footernav ul li a:hover {
+    opacity: 1;
 }
 
+.footernav ul li {
+    line-height: 40px;
+}
+
+
+
 .footerbawah {
-    color: white;
     text-align: center;
+    font-weight: 200;
+}
+
+.footerbawah p {
+    color: white;
 }
