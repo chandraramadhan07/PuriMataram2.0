@@ -15,22 +15,18 @@ body {
         transform: translateX(0);
     }
     20% {
-        transform: translateX(-600px);
+        transform: translateX(-100%);
     }
     40% {
-        transform: translateX(-1200px);
+        transform: translateX(-200%);
     }
     60% {
-        transform: translateX(-1800px);
-    }
-    80% {
-        transform: translateX(-2400px);
+        transform: translateX(-300%);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(-400%);
     }
 }
-
 
 @keyframes fade {
     0% {
@@ -72,6 +68,7 @@ nav {
 nav.sticky {
     padding: 30px;
     background: #ffff;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
 }
 
 nav ul li {
@@ -96,11 +93,27 @@ nav.sticky ul li a{
 /*Home*/        /*Home*/        /*Home*/        /*Home*/        /*Home*/         
 /*NAV Home Content*/               
 .home-nav-ul-li-a {
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 1px #000;
 }
 
-#home-nav.sticky .home-nav-ul-li-a {
-    border-bottom: solid 1px #000;
+#home-nav {
+    background-color: #fff;
+}
+
+#home-nav ul li a {
+    color:#000;
+}
+
+#home-nav.stick {
+    background-color: #01271e;
+}
+
+#home-nav.stick ul li a {
+    color: #fff;
+}
+
+#home-nav.stick .home-nav-ul-li-a {
+    border-bottom: solid 1px #fff;
 }
 
 /*Home Content*/ 
@@ -110,15 +123,39 @@ nav.sticky ul li a{
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.788) 80%), url(./img/depan.jpg);
     background-size: cover;
-    
+}
+
+
+.slide-content-img {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.slide-img {
+    display: flex;
+    width: 100%;
+    height: auto;
+    animation: 20s slider;
+    animation-delay: 2s;
+    animation-timing-function: cubic-bezier(0.1, 1, 0.05, 1);
+    animation-iteration-count: infinite;
+}
+
+.slide-img img {
+    width: 1980px;
+    height: 100vh;
+    filter:brightness(50%);
 }
 
 .home-content {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    height: 75vh;
     padding: 0 100px;
     align-items: center;
 }
@@ -127,87 +164,25 @@ nav.sticky ul li a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    width: 45%;
-    height: 100vh;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     color: white;
+    animation: up 2s;
+    animation-fill-mode: both;
+    
 }
 
-.header {
-    margin: 100px 0;
-    height: 50%;
-    animation: up 2s;
-     
-}
-.header h1 {
+.text-content h1 {
     font-size: 8em;
     border-bottom: 3px solid white;
 
 }
-.header p {
+.text-content p {
     margin-top: 10px;
     text-align: center;
     font-size: 2em
 }
-
-
-.slide-gallery {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 45%;
-    height: 100vh;
-    margin-left: 10%;
-    
-}
-
-.outer-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 660px;
-    height: 400px;
-    background-color: #0000002c;
-
-    backdrop-filter: blur(5px);
-    
-    animation: fade 1s;
-    border-radius: 10px;
-    padding: 0 0 30px 0;
-}
-
-.outer-content h2 {
-    padding: 20px;
-    font-size: 1.6em;
-    color:#fff;
-}
-
-.slide-content {
-    display: flex;
-    align-items: center;
-    width: 600px;
-    height: auto;
-    overflow: hidden;
-}
-
-.slide-img {
-    width: 100%;
-    height: auto;
-
-    transition-property: transform;
-    animation-name: slider; 
-    animation-duration: 15s;
-    animation-delay: 3s; 
-    animation-timing-function:cubic-bezier(0.1, 1, 0.1, 1);
-    animation-iteration-count: infinite;
-}
-
-.slide-img img {
-    width: 600px;
-    border-radius: 5px;
-}
-
 
 .sub-home1{
     display: flex;
@@ -284,10 +259,12 @@ nav.sticky ul li a{
     width: 70px;
     height: 70px;
     margin-bottom: 20px;
+    background-color: black;
+    border-radius: 50%;
 }
 
 .header-content-img img {
-    width: 70px;
+    width: 100%;
     height: 70px;
     border-radius: 50%;
 }
@@ -302,7 +279,6 @@ nav.sticky ul li a{
 .header-content-txt h6 {
     font-size: 0.85em;
 }
-
 
 .sub-main-content {
     font-weight: lighter;
@@ -323,17 +299,23 @@ nav.sticky ul li a{
 .about {
     width: 100%;
     height: auto;
-    padding: 0 150px 100px;
-    background: linear-gradient(to bottom,#001f18, #05503a, #199b6b);
+    padding: 150px 250px 83px;
+    background-image: url(/img/bg-abtus2.jpg);
+    background-size: cover;
     display: flex;
     align-items: center;
     flex-direction: column;
+    
+}
 
+.about a {
+    text-decoration: none;
+    color: wheat;
+    margin-top: 40px;
 }
 
 .about-header {
     text-align: center;
-    margin-top: 100px;
     color: #aa7229;
     width: 250px;
     padding-bottom: 40px;
@@ -354,9 +336,14 @@ nav.sticky ul li a{
     height: auto;
     border-radius: 5px;
     background-color: #fff;
-    padding: 30px 0 0 0;
-    border: 2px solid #199b6b;
+    padding: 40px 50px 50px;
     animation: fade 2s; 
+    text-align: justify;
+}
+
+iframe {
+    width: 55%;
+    height: 400px;
 }
 
 .about-content p {
@@ -364,10 +351,7 @@ nav.sticky ul li a{
     font-size: 1.2rem;
 }
 
-iframe {
-    width: 55%;
-    height: 400px;
-}
+
 
 
 /* Maps */      /* Maps */      /* Maps */      /* Maps */  
@@ -455,7 +439,7 @@ iframe {
     z-index: 2;
     width: 400px;
     height: auto;
-    padding: 30px 30px 15px 30px;
+    padding: 20px;
     background-color: #fff;
 }
 
@@ -503,34 +487,20 @@ iframe {
 .bunga-popup-box,
 .unggas-popup-box {
     width: 100%;
-    text-align: start;
+    display: flex;
+    
 }
 
-.gallery-anchor {
-    width: 60%;
-    height: auto;
-    margin-top: 15px;
-    align-self: start;
-    color: #000;
+.parkir-popup-box img:hover {
+    filter: brightness(50%);
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
-.gallery-anchor a {
-    text-decoration: none;
-    color: #000;
-}
 
 .pin-parkir-container{      /* Posisi Pin Maps Parkiran*/
     left: 13%;
     top: 37%;
-}
-
-.pin-parkir-img {
-    width: 25%;
-}
-
-.pin-parkir-txt {
-    font-size: small;
-    font-weight: bolder;
 }
 
 .pin-embung-container {         /* Posisi Pin Maps Embung Kembangan */
@@ -538,27 +508,9 @@ iframe {
     top: 51%;
 }
 
-.pin-embung-img {
-    width: 25%;
-}
-
-.pin-embung-txt {
-    font-size: small;
-    font-weight: bolder;
-}
-
 .pin-kelinci-container {         /* Posisi Pin Taman Kelinci */
     left: 53%;
     top: 58%;
-}
-
-.pin-kelinci-img {
-    width: 25%;
-}
-
-.pin-kelinci-txt {
-    font-size: small;
-    font-weight: bolder;
 }
 
 .pin-merino-container {         /* Posisi Pin Kandang Merino */
@@ -566,28 +518,9 @@ iframe {
     top: 73%;
 }
 
-.pin-merino-img {
-    width: 25%;
-    
-}
-
-.pin-merino-txt {
-    font-size: small;
-    font-weight: bolder;
-}
-
 .pin-bunga-container {         /* Posisi Pin Taman Bunga */
     left: 62.85%;
     top: 20%;
-}
-
-.pin-bunga-img {
-    width: 25%;
-}
-
-.pin-bunga-txt {
-    font-size: small;
-    font-weight: bolder;
 }
 
 .pin-rusa-container {         /* Posisi Pin Kandang Rusa */
@@ -595,29 +528,9 @@ iframe {
     top: 38%;
 }
 
-.pin-rusa-img {
-    width: 25%;
-}
-
-.pin-rusa-txt {
-    text-align: center;
-    font-size: small;
-    font-weight: bolder;
-}
-
 .pin-unggas-container {         /* Posisi Pin Kandang Rusa */
     left: 45%;
     top: 20%;
-}
-
-.pin-unggas-img {
-    width: 25%;
-}
-
-.pin-unggas-txt {
-    text-align: center;
-    font-size: small;
-    font-weight: bolder;
 }
 
 .pin-pasar-container {         /* Posisi Pin PASAR NDELIK */
@@ -625,26 +538,32 @@ iframe {
     top: 38%;
 }
 
-.pin-pasar-img {
-    width: 25%;
-}
-
-.pin-pasar-txt {
-    text-align: center;
-    font-size: small;
-    font-weight: bolder;
-}
-
 .pin-kaktus-container {         /* Posisi Pin TAMAN KAKTUS */
     left: 54%;
     top: 76%;
 }
 
-.pin-kaktus-img {
+.pin-parkir-img,
+.pin-embung-img,
+.pin-merino-img,
+.pin-kelinci-img,
+.pin-pasar-img,
+.pin-bunga-img,
+.pin-rusa-img,
+.pin-kaktus-img,
+.pin-unggas-img {
     width: 25%;
 }
 
-.pin-kaktus-txt {
+.pin-parkir-txt,
+.pin-embung-txt,
+.pin-merino-txt,
+.pin-kelinci-txt,
+.pin-pasar-txt,
+.pin-bunga-txt,
+.pin-rusa-txt,
+.pin-kaktus-txt,
+.pin-unggas-txt {
     text-align: center;
     font-size: small;
     font-weight: bolder;
@@ -661,7 +580,6 @@ iframe {
     top: 10px;
     border-radius: 50%;  
     padding: 0 12px;
-
 }
 
 .btn-close a {
@@ -704,254 +622,14 @@ iframe {
 }
 
 /* HIDDEN PARKIR */
-.parkir-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.parkir-hidden {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 80%;
-    background-color: white;
-    color: black;
-    padding: 30px;
-    
-}
-
-.parkir-hidden .btn-close {
-    right: 13%;
-    top: 12%;
-}
-
-.parkir-hidden-container:target {
-    display: flex;
-}
-
-
-/* Hidden Embung Kembangan */
-.embung-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.embung-hidden {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 85%;
-    background-color: white;
-    color: black;
-    padding: 30px;
-}
-
-.embung-hidden-container:target {
-    display: flex;
-}
-
-
-/* HIDDEN TAMAN KELINCI */
-.kelinci-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.kelinci-hidden {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 80%;
-    background-color: white;
-    padding: 30px;
-}
-
-.kelinci-hidden-container:target {
-    display: flex;
-}
-
-
-
-/* HIDDEN KANDANG MERINO */
-.merino-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.merino-hidden {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 80%;
-    background-color: white;
-    padding: 30px;
-}
-
-.merino-hidden-container:target {
-    display: flex;
-}
-
-
-/* HIDDEN TAMAN BUNGA */
-.bunga-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.bunga-hidden {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 80%;
-    background-color: white;
-    padding: 30px;
-}
-
-.bunga-hidden .hidden-box {
-    width: 90%;
-}
-
-.bunga-hidden-container:target {
-    display: flex;
-
-}
-
-.bunga-hidden .btn-close {
-    right: 13.5%;
-    top: 12%;
-}
-
-
-/* HIDDEN TAMAN RUSA */
-.rusa-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.rusa-hidden {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 80%;
-    background-color: white;
-    padding: 30px;
-}
-
-.rusa-hidden-container:target {
-    display: flex;
-
-}
-
-
-/* HIDDEN TAMAN UNGGAS */
-.unggas-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.unggas-hidden {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 80%;
-    background-color: white;
-    padding: 30px;
-}
-
-.unggas-hidden-container:target {
-    display: flex;
-}
-
-/* HIDDEN PASAR NDELIK */
-.pasar-hidden-container {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000088;
-    backdrop-filter: blur(5px);
-}
-
-.pasar-hidden {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 80%;
-    background-color: white;
-    padding: 30px;
-}
-
-.pasar-hidden-container:target {
-    display: flex;
-}
-
-/* HIDDEN TAMAN KAKTUS */
+.parkir-hidden-container,
+.embung-hidden-container,
+.merino-hidden-container,
+.kelinci-hidden-container,
+.pasar-hidden-container,
+.unggas-hidden-container,
+.bunga-hidden-container,
+.rusa-hidden-container,
 .kaktus-hidden-container {
     display: none;
     position: fixed;
@@ -963,20 +641,97 @@ iframe {
     backdrop-filter: blur(5px);
 }
 
-.kaktus-hidden {
+.parkir-hidden-container:target,
+.rusa-hidden-container:target,
+.merino-hidden-container:target,
+.kaktus-hidden-container:target,
+.kelinci-hidden-container:target,
+.embung-hidden-container:target,
+.pasar-hidden-container:target,
+.unggas-hidden-container:target,
+.bunga-hidden-container:target {
     display: flex;
-    position: fixed;
+}
+
+.parkir-hidden,
+.merino-hidden,
+.embung-hidden,
+.kelinci-hidden,
+.pasar-hidden,
+.unggas-hidden,
+.rusa-hidden,
+.kaktus-hidden,
+.bunga-hidden {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
-    height: 80%;
+    width: 80%;
+    height: 85%;
     background-color: white;
+    color: black;
     padding: 30px;
+    
 }
 
-.kaktus-hidden-container:target {
-    display: flex;
+.parkir-hidden .btn-close {
+    right: 11%;
+    top: 10%;
+}
+
+/* Hidden Embung Kembangan */
+.embung-hidden .btn-close {
+    right: 11%;
+    top: 10%;
+}
+
+/* HIDDEN TAMAN KELINCI */
+.kelinci-hidden .btn-close {
+    right: 11%;
+    top: 10%;
+}
+
+/* HIDDEN KANDANG MERINO */
+.merino-hidden .btn-close {
+    right: 11%;
+    top: 10%;
+}
+
+/* HIDDEN TAMAN BUNGA */
+
+.bunga-hidden .hidden-box {
+    width: 90%;
+}
+
+.bunga-hidden .btn-close {
+    right: 13.5%;
+    top: 12%;
+}
+
+/* HIDDEN TAMAN RUSA */
+.rusa-hidden .btn-close {
+    right: 11%;
+    top: 10%;
+}
+
+/* HIDDEN TAMAN UNGGAS */
+
+.unggas-hidden .btn-close {
+    right: 11%;
+    top: 10%;
+}
+
+/* HIDDEN PASAR NDELIK */
+.pasar-hidden .btn-close {
+    right: 11%;
+    top: 10%;
+}
+
+/* HIDDEN TAMAN KAKTUS */
+
+.kaktus-hidden .btn-close {
+    right: 11%;
+    top: 10%;
 }
 
 
@@ -1108,7 +863,6 @@ iframe {
 }
 
 input {
-    
     padding: 25px;
     border: solid 1px rgba(0, 0, 0, 0.329);
     margin-bottom: 40px;
@@ -1118,10 +872,7 @@ input {
     width: 45%;
 }
 
-#phone {
-    width: 100%;
-}
-
+#phone,
 #email {
     width: 100%;
 }
@@ -1151,6 +902,73 @@ textarea {
 .submit:hover {
     background-color: #aa7229;
     color: #fff;
+}
+
+
+/* Submit */    /* Submit */    /* Submit */    /* Submit */
+.submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:55.2vh;
+}
+
+.submit-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70vh;
+    height: auto;
+    text-align: center;
+}
+
+.box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    gap: 50px;
+}
+
+.submit-h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+.submit-back {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 50%;
+}
+.box-content p {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    color: Black;
+    border: solid 1px black;
+}
+
+.box-content p:hover {
+    background-color: #aa7229;
+    transition: 0.5s ease;
+    color: #fff;
+    border: solid 1px;
+}
+.box-content a {
+text-decoration: none;
 }
 
 /* FOOTER */        /* FOOTER */        /* FOOTER */        /* FOOTER */        
@@ -1226,14 +1044,12 @@ footer {
 }
 
 .footernav-content {
-
     width: 70%;
 }
 
 .footernav ul li a {
     color : #fff;
     text-decoration: none;
-
     opacity: 0.7;
     transition: 0.5s;
 }
@@ -1261,6 +1077,9 @@ footer {
     color: white;
     opacity: 0.9;
 }
+
+
+
 
 /* Efek ikon medsos footer */
 .ikonmedsos img:hover {
